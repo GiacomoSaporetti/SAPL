@@ -1,25 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "string_utilities.h"
+#include "parser.h"
 
 #define MAX_LINE_LENGTH 100
 
 
 FILE* program;
 char current_line[MAX_LINE_LENGTH];
-
-void RemoveComment(char* line)
-{
-	int i=-1;
-	while(line[++i] != '\0')
-	{
-		if(line[i] == '#')
-		{
-			line[i] = '\0';
-			break;
-		}
-	}
-}
 
 int main(int argc, char** argv)
 {
@@ -39,7 +28,9 @@ int main(int argc, char** argv)
 	while(fgets(current_line, MAX_LINE_LENGTH, program))
 	{
 		RemoveComment(current_line);
+		Parse(current_line);
 		printf("%s", current_line);
 	}
+	printf("pattern abc in oirjgoirabcejdoi found at: %d\n", FindPattern("oirjgoirabcejdoi", "abc") );
 	return 0;
 }
