@@ -1,0 +1,10 @@
+#Questo è un commento
+
+#Questa è una variabile
+miavar <-- 0
+
+#Questo è per scrivere su console
+write(ciuppa) #questo è un commento inline
+
+
+aaaa#commente
