@@ -6,8 +6,8 @@ default: ${OBJ}
 
 ../obj/%.o: %.c 
 	@echo Compiling $<
-	@echo ${INC}	
 	@gcc -c $< ${INC} -o ../obj/${patsubst %.c,%.o,$<}
 
 clean:
 	@cd ../obj && rm -rf *.o
+

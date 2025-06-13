@@ -1,5 +1,4 @@
-#include <stdlib.h>
-#include "string_utilities.h"
+#include "sapl.h"
 
 void RemoveComment(char* line)
 {

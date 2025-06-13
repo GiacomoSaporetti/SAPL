@@ -1,11 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include "string_utilities.h"
-#include "parser.h"
-#include "database.h"
-
-#define MAX_LINE_LENGTH 100
+#include "sapl.h"
 
 
 FILE* program;
@@ -32,8 +25,19 @@ int main(int argc, char** argv)
 		Parse(current_line);
 	}
 
-	int test = 12;
-	printf("%d, %d\n", test, *(uint32_t) &test);
-	//AddVariable(4, 4, "miavar", *  ((uint32_t *) &test));
+	float test1 = 12.345;
+	float test2 = 4.444;
+	int test3 = 1;
+	int test4 = 182;
+	//printf("%d, %d\n", test, *(uint32_t*) &test);
+	AddVariable(FLOAT, "miavar", TO_BITS(test1));
+	AddVariable(FLOAT, "miavar", TO_BITS(test2));
+	AddVariable(INT, "miavar", TO_BITS(test3));
+	AddVariable(INT, "miavar2", TO_BITS(test2));
+	Variable* v;
+	v = GetVariable("miavar");
+	printf("%f, %d\n",v->data.FLOAT, v->data.INT);
+	v = GetVariable("miavar2");
+	printf("%f, %d\n",v->data.FLOAT, v->data.INT);
 	return 0;
 }

@@ -9,3 +9,8 @@ sources:
 
 clean:
 	@cd obj/ && rm -rf *.o
+
+run: 
+	@./sapl testprog.sapl
+
+rebuild: clean all run
