@@ -6,6 +6,7 @@ union var_data
 {
 	int INT;
 	float FLOAT;
+	uint32_t BITS;
 };
 
 typedef struct Node

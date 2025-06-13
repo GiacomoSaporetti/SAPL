@@ -25,19 +25,8 @@ int main(int argc, char** argv)
 		Parse(current_line);
 	}
 
-	float test1 = 12.345;
-	float test2 = 4.444;
-	int test3 = 1;
-	int test4 = 182;
-	//printf("%d, %d\n", test, *(uint32_t*) &test);
-	AddVariable(FLOAT, "miavar", TO_BITS(test1));
-	AddVariable(FLOAT, "miavar", TO_BITS(test2));
-	AddVariable(INT, "miavar", TO_BITS(test3));
-	AddVariable(INT, "miavar2", TO_BITS(test2));
-	Variable* v;
-	v = GetVariable("miavar");
-	printf("%f, %d\n",v->data.FLOAT, v->data.INT);
-	v = GetVariable("miavar2");
-	printf("%f, %d\n",v->data.FLOAT, v->data.INT);
+	Variable* v = GetVariable("variabilona");
+	if(v != NULL) printf("%f, %x, %d, %x\n", v->data.FLOAT, v->data.FLOAT, v->data.INT, v->data.INT);
+
 	return 0;
 }
