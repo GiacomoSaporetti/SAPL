@@ -2,23 +2,34 @@
 #define DATABASE_H
 #include <stdint.h>
 
+union var_data
+{
+	int INT;
+	float FLOAT;
+};
+
 typedef struct Node
 {
 	struct Node* next;
 	void* data;
-};
+} Node;
 
 typedef struct Variable
 {
 	int type;
-	int bytes;
 	char identifier[50];
-	uint32_t data;
+	union var_data data;
+} Variable;
+
+enum v_type
+{
+	INT,
+	FLOAT,
 };
 
 struct Node* AddNode(struct Node* last_node, void* data);
 
-void AddVariable(int type, int bytes, char* identifier, uint32_t data);
+void AddVariable(int type, char* identifier, union var_data data);
 
 struct Variable* GetVariable(char* identifier); 
 #endif
