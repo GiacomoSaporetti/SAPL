@@ -3,6 +3,7 @@
 #include <string.h>
 #include "string_utilities.h"
 #include "parser.h"
+#include "database.h"
 
 #define MAX_LINE_LENGTH 100
 
@@ -29,8 +30,10 @@ int main(int argc, char** argv)
 	{
 		RemoveComment(current_line);
 		Parse(current_line);
-		printf("%s", current_line);
 	}
-	printf("pattern abc in oirjgoirabcejdoi found at: %d\n", FindPattern("oirjgoirabcejdoi", "abc") );
+
+	int test = 12;
+	printf("%d, %d\n", test, *(uint32_t) &test);
+	//AddVariable(4, 4, "miavar", *  ((uint32_t *) &test));
 	return 0;
 }
