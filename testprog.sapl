@@ -1,7 +1,7 @@
 #Questo è un commento
 
 #Questa è una variabile
-variabilona <-- 2 1 4 7 4836 47
+variabilona = 2 1 + 4 7 4836 47
 
 #Questo è per scrivere su console
 write(ciuppa) 
