@@ -5,4 +5,6 @@ void Parse(char* line);
 void AssignVariable(char* line, int separator);
 
 void PrintSomething(char* line, int separator);
+
+union var_data EvaluateExpression(char* line);
 #endif
