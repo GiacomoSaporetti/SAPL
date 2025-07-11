@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -6,6 +7,9 @@
 #include "database.h"
 
 #define MAX_LINE_LENGTH 100
+=======
+#include "sapl.h"
+>>>>>>> 9bf0b7e703409559e05b753f50ff9b0667dc7bf0
 
 
 FILE* program;
@@ -32,8 +36,14 @@ int main(int argc, char** argv)
 		Parse(current_line);
 	}
 
+<<<<<<< HEAD
 	int test = 12;
 	printf("%d, %d\n", test, *(uint32_t) &test);
 	//AddVariable(4, 4, "miavar", *  ((uint32_t *) &test));
+=======
+	Variable* v = GetVariable("variabilona");
+	if(v != NULL) printf("%f, %x, %d, %x\n", v->data.FLOAT, v->data.FLOAT, v->data.INT, v->data.INT);
+
+>>>>>>> 9bf0b7e703409559e05b753f50ff9b0667dc7bf0
 	return 0;
 }
